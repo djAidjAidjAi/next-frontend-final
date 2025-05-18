@@ -1,0 +1,60 @@
+# 컴파일된 output
+/dist
+/node_modules
+
+# 로그
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# 테스트
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# env 파일
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# 빌드 디렉토리
+/build
+
+# 타입스크립트 캐시
+*.tsbuildinfo
+
+# npm 패키지 락 파일 (팀이 yarn을 사용한다면 이 줄을 주석처리하세요)
+package-lock.json
+
+# yarn
+# yarn.lock
+# .yarn/*
+# !.yarn/patches
+# !.yarn/plugins
+# !.yarn/releases
+# !.yarn/sdks
+# !.yarn/versions

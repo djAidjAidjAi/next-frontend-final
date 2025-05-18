@@ -1,0 +1,71 @@
+.loginButton {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #1ed760;
+}
+
+.spotifyIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.loggedInContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcomeText {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.profileButton {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profileButton:hover {
+  background-color: #444;
+}
+
+.logoutButton {
+  background-color: transparent;
+  color: #ff5555;
+  border: 1px solid #ff5555;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #ff5555;
+  color: white;
+}
