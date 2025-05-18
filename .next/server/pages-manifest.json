@@ -3,7 +3,13 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/login": "pages/login.js",
+<<<<<<< HEAD
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
   "/": "pages/index.js",
   "/profile": "pages/profile.js"
+=======
+  "/profile": "pages/profile.js",
+  "/": "pages/index.js",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js"
+>>>>>>> 1173ffc28650e1aa5ed4ebfac2a826f321d74b44
 }
