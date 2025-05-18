@@ -44,6 +44,11 @@ lerna-debug.log*
 # 빌드 디렉토리
 /build
 
+# Next.js 빌드 출력
+/.next/
+.next/
+out/
+
 # 타입스크립트 캐시
 *.tsbuildinfo
 
