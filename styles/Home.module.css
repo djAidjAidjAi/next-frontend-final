@@ -51,3 +51,14 @@
 .loginContainer {
   margin-top: 2rem;
 }
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  font-size: 1.5rem;
+}
