@@ -15,7 +15,7 @@ export default function Profile() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const router = useRouter();
   const carouselRef = useRef(null);
-  
+
   // Redirect to login page if not authenticated
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -88,26 +88,26 @@ export default function Profile() {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>DJAI</div>
-      
+
       {userProfile ? (
         <div className={styles.mainContent}>
           <div className={styles.userInfo}>
             <h1 className={styles.welcomeTitle}>Welcome, {userProfile.display_name || 'user123'}!</h1>
             <p className={styles.statsInfo}>
-              {playlists.length || 0} public playlists · {userProfile.followers?.total || 0} Followers · {41} Following
+              {playlists.length || 0} public playlists
             </p>
           </div>
-          
+
           <div className={styles.playlistsSection}>
             <h2 className={styles.pickTitle}>Pick a playlist for the remix genre</h2>
-            
+
             <div className={styles.playlistsCarousel} ref={carouselRef}>
               {/* 플레이리스트 표시 */}
               {playlists.length > 0 ? (
                 playlists.map((playlist, index) => (
-                  <div 
-                    key={playlist.id} 
-                    className={styles.playlistCard} 
+                  <div
+                    key={playlist.id}
+                    className={styles.playlistCard}
                     onClick={() => {
                       setSelectedPlaylist({
                         id: playlist.id,
@@ -117,10 +117,10 @@ export default function Profile() {
                     }}
                   >
                     {playlist.images && playlist.images.length > 0 ? (
-                      <img 
-                        src={playlist.images[0].url} 
-                        alt={playlist.name} 
-                        className={styles.playlistImage} 
+                      <img
+                        src={playlist.images[0].url}
+                        alt={playlist.name}
+                        className={styles.playlistImage}
                       />
                     ) : (
                       <div className={styles.noImage}>No Image</div>
@@ -141,33 +141,16 @@ export default function Profile() {
                   </div>
                 ))
               )}
-              
-              {/* 다음 버튼 */}
-              <button 
-                className={styles.carouselNext} 
-                aria-label="Next playlist"
-                onClick={scrollCarousel}
-              >
-                <span>›</span>
-              </button>
             </div>
           </div>
-          
-          {/* 로그아웃 버튼 */}
-          <button 
-            className={styles.logoutButton}
-            onClick={() => signOut({ callbackUrl: "/" })}
-          >
-            Logout
-          </button>
         </div>
       ) : (
         <p className={styles.loading}>Loading profile information...</p>
       )}
-      
+
       {/* Remix Modal */}
       {selectedPlaylist && (
-        <RemixModal 
+        <RemixModal
           isOpen={remixModalOpen}
           onClose={() => setRemixModalOpen(false)}
           playlist={selectedPlaylist}
