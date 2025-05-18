@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from '../../styles/RemixModal.module.css';
 
 export default function RemixModal({ isOpen, onClose, playlist }) {
+  console.log("playlist: ", playlist);
   const [youtubeLink, setYoutubeLink] = useState('');
 
   if (!isOpen) return null;
@@ -12,14 +13,30 @@ export default function RemixModal({ isOpen, onClose, playlist }) {
     }
   };
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Logic for creating a remix using YouTube link and playlist
-    console.log('YouTube Link:', youtubeLink);
-    console.log('Playlist:', playlist);
-    alert('Remix request completed!');
-    onClose();
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(`https://djai-t0vj.onrender.com/tracks?youtube=${youtubeLink}&url=${playlist.id}`);
+
+            if (!response.ok) throw new Error('Failed to generate remix');
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'output.wav';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+
+            onClose(); // Close the modal
+        } catch (error) {
+            console.error('Error downloading remix:', error);
+            alert('Failed to download remix. Please try again.');
+        }
+    };
   
   return (
     <div className={styles.backdrop} onClick={handleBackdropClick}>
